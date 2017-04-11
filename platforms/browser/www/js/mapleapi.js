@@ -141,6 +141,7 @@ function populateCards(data){
 	$("#internet")[0].setAttribute("data-price", data["city"]["internet"]);
 	ableInfoBox(cardBrotherInfobox("#internet"));
 	
+	$("#academia")[0].setAttribute("data-api", data["city"]["academia"]);
 	$("#academia")[0].setAttribute("data-price", multiplyPeople(data["city"]["academia"]));
 	ableInfoBox(cardBrotherInfobox("#academia"));
 	

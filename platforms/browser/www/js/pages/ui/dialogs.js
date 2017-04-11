@@ -40,6 +40,12 @@ $(function () {
 		else if (type === 'edit-aluguel'){
 			showAluguelBox(this);
 		}
+		else if (type === 'edit-mobile'){
+			showMobileBox(this);
+		}
+		else if (type === 'edit-academia'){
+			showAcademiaBox(this);
+		}
     });
 });
 
@@ -204,6 +210,75 @@ function showAluguelBox(div){
 	
 }
 
+function showMobileBox(div){
+	if (validateEnableCard(div)) return;
+	
+	var brotherDiv = $(div).parent().children().eq(1).children().eq(1);
+	var old = brotherDiv[0].getAttribute("data-price");;
+	var newValue;
+	
+	swal({
+	  title: 'Quantos minutos gastos em ligação por pessoa?',
+	  input: 'text',
+	  inputPlaceholder: '100',
+	  showCancelButton: true,
+	  inputValidator: function (value) {
+		return new Promise(function (resolve, reject) {
+		  if (value) {
+			newValue = parseFloat(brotherDiv[0].getAttribute("data-api")) * multiplyPeople(value);
+			brotherDiv[0].setAttribute("data-price", newValue);
+			resolve();
+		  } else {
+			reject('Digite os minutos gastos queridão. =)')
+		  }
+		})
+	  }
+	}).then(function () {
+		swal({
+			type: 'success',
+			html: prepareMessage(old, newValue, "Franquia de celular economizada", "Franquia de celular encarecida")
+		}).then(function (){ 	  
+			restartCounter(brotherDiv, old, newValue);
+			mensureProjections(cardSum());
+		});
+	});	
+	
+}
+
+function showAcademiaBox(div){
+	if (validateEnableCard(div)) return;
+	
+	var brotherDiv = $(div).parent().children().eq(1).children().eq(1);
+	var old = brotherDiv[0].getAttribute("data-price");;
+	var newValue;
+	
+	swal({
+	  title: 'Quantas pessoas farão academia?',
+	  input: 'text',
+	  inputPlaceholder: '1',
+	  showCancelButton: true,
+	  inputValidator: function (value) {
+		return new Promise(function (resolve, reject) {
+		  if (value) {
+			newValue = parseFloat(brotherDiv[0].getAttribute("data-api")) * value;
+			brotherDiv[0].setAttribute("data-price", newValue);
+			resolve();
+		  } else {
+			reject('Digite os minutos gastos queridão. =)')
+		  }
+		})
+	  }
+	}).then(function () {
+		swal({
+			type: 'success',
+			html: prepareMessage(old, newValue, "Academia economizada", "Academia encarecida")
+		}).then(function (){ 	  
+			restartCounter(brotherDiv, old, newValue);
+			mensureProjections(cardSum());
+		});
+	});	
+	
+}
 function validateEnableCard(div){
 	var enableDiv = $(div).parent().children().eq(0);
 	if (enableDiv[0].getAttribute("data-enable") == "false"){

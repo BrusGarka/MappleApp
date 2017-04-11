@@ -516,18 +516,19 @@
 			* remover slideasssr com cautela nos JS
 			* tela de cadastro de facul ou card da facul já fazendo esse trampo via dialog
 		
-			- card celular: permitir preencher o tempo de minutos gastos
-			- card busão: nao precisa no caso de morar perto do college, avisar isso
-			- no card aluguel permitir escolha de no centro, com quarto dvidio ou não
+			* card celular: permitir preencher o tempo de minutos gastos
+			- card busão: nao precisa no caso de morar perto do college, avisar isso, mas ai considerar q a pessoa vai gastar busao 10 vezes por mês
+			+ no card aluguel permitir escolha de no centro, com quarto dvidio ou não
 			- no card passaporte isntruir pra caso já tenha, desmarcar só o referente a qtde de pessoas
 			- card energia comentar o rolé do aquecimento e alguns alugueis já vem inclusos
 			- card restaurante filtrando por rolés caros estilo numbeo 
-			- card acadmeia filtrando pela galera q vai usufruir esse card field de QTDE
-			- no card trampo, considerar que só se trabalha após o primeiro mês =)
+			* card acadmeia filtrando pela galera q vai usufruir esse card field de QTDE
+			- no card trampo, considerar que só se trabalha após o primeiro mês =) ou editável mês
 			- card passeios mais livre, pra prenhcer o que quiser =eita) 
 			- criar um card dinamico com botão redondin de add em quaqluer canto
 			- card emprego pensando no fato de possivelmente formar e passar de 20h pra 40h
 			- card estágio?
+			- fazer data-constantes para serem salvas na conta do facebook para calculos. que tal tela de config disso?
 			- estudar site de economia do carinha do canadá
 				
 			* repensar essa table: qual a necessiade de deixar editável?
@@ -592,7 +593,7 @@
                                     </p>
 									
                                     <select id="selectCollege" name="selectCollege" class="form-control show-tick" data-live-search="true">
-                                        <option>Aae</option>
+                                        <option>Carregando colleges...</option>
                                     </select>
                                 </div>
 								<!-- <div class="col-md-4"> -->
@@ -863,7 +864,7 @@
 								<div class="text">CELULAR</div>
 								<div id="mobile" class="number counter" data-api="" data-price=""></div>
 							</div>
-							<div role="button" data-type="edit-card" style="position: absolute; right: 0px;">
+							<div role="button" data-type="edit-mobile" style="position: absolute; right: 0px;">
 								<i class="material-icons options">menu</i>
 							</div>
 						</div>
@@ -893,7 +894,7 @@
 								<div class="text">ACADEMIA</div>
 								<div id="academia" class="number counter" data-api="" data-price=""></div>
 							</div>
-							<div role="button" data-type="edit-card" style="position: absolute; right: 0px;">
+							<div role="button" data-type="edit-academia" style="position: absolute; right: 0px;">
 								<i class="material-icons options">menu</i>
 							</div>
 						</div>
@@ -1037,37 +1038,37 @@
 											</thead>
 											<tbody>
 												<tr>
-													<td>1º Semestre</td>
+													<td>1º</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 												</tr>
 												<tr>
-													<td>2º Semestre</td>
+													<td>2º</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 												</tr>
 												<tr>
-													<td>3º Semestre</td>
+													<td>3º</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 												</tr>
 												<tr>
-													<td>4º Semestre</td>
+													<td>4º</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 												</tr>
 												<tr>
-													<td>5º Semestre</td>
+													<td>5º</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 												</tr>
 												<tr>
-													<td>6º Semestre</td>
+													<td>6º</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
 													<td>$ 0</td>
